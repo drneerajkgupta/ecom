@@ -61,7 +61,6 @@
     gap: 18px;
   }
 
-  /* --- Brand + ETA --- */
   .brand {
     display: flex;
     align-items: center;
@@ -120,10 +119,7 @@
     box-shadow: 0 0 0 3px rgba(12, 131, 31, .13);
   }
 
-  .search-bar svg {
-    flex-shrink: 0;
-    color: var(--text-muted);
-  }
+  .search-bar svg { flex-shrink: 0; color: var(--text-muted); }
 
   .search-bar input {
     flex: 1;
@@ -184,16 +180,8 @@
     line-height: 1.2;
   }
 
-  .cart-btn-count {
-    font-size: 11px;
-    font-weight: 600;
-    opacity: .92;
-  }
-
-  .cart-btn-total {
-    font-size: 14px;
-    font-weight: 800;
-  }
+  .cart-btn-count { font-size: 11px; font-weight: 600; opacity: .92; }
+  .cart-btn-total { font-size: 14px; font-weight: 800; }
 
   /* ================= PROMO BANNER ================= */
   .promo {
@@ -229,17 +217,8 @@
     pointer-events: none;
   }
 
-  .promo h2 {
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: -.3px;
-  }
-
-  .promo p {
-    font-size: 13px;
-    opacity: .92;
-    margin-top: 3px;
-  }
+  .promo h2 { font-size: 20px; font-weight: 800; letter-spacing: -.3px; }
+  .promo p { font-size: 13px; opacity: .92; margin-top: 3px; }
 
   .promo-badge {
     background: var(--yellow);
@@ -303,6 +282,14 @@
     place-items: center;
     font-size: 30px;
     transition: all .18s ease;
+    overflow: hidden;
+  }
+
+  .cat-emoji img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   .cat-tile:hover .cat-emoji { border-color: #bfe3c6; }
@@ -321,10 +308,7 @@
     line-height: 1.2;
   }
 
-  .cat-tile.active .cat-label {
-    color: var(--green);
-    font-weight: 800;
-  }
+  .cat-tile.active .cat-label { color: var(--green); font-weight: 800; }
 
   /* ================= PRODUCT GRID ================= */
   .product-grid {
@@ -353,23 +337,42 @@
     border-color: #dcdcdc;
   }
 
+  /* ---- Product image tile ---- */
   .card-img {
     position: relative;
     width: 100%;
     aspect-ratio: 1 / 1;
     background: #f7f8fa;
     border-radius: 10px;
-    display: grid;
-    place-items: center;
-    font-size: 52px;
     margin-bottom: 8px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .35s ease;
+  }
+
+  .card:hover .card-img img { transform: scale(1.06); }
+
+  /* emoji fallback if the photo fails to load */
+  .card-img.img-failed::after {
+    content: attr(data-emoji);
+    font-size: 52px;
+    line-height: 1;
   }
 
   .discount-tag {
     position: absolute;
     top: 6px;
     left: 6px;
+    z-index: 2;
     background: var(--green);
     color: #fff;
     font-size: 9.5px;
@@ -502,13 +505,7 @@
   }
 
   .empty-state .icon { font-size: 56px; margin-bottom: 10px; }
-
-  .empty-state h3 {
-    font-size: 18px;
-    color: var(--text);
-    margin-bottom: 5px;
-  }
-
+  .empty-state h3 { font-size: 18px; color: var(--text); margin-bottom: 5px; }
   .empty-state p { font-size: 13px; }
 
   /* ================= CART SIDEBAR ================= */
@@ -550,11 +547,7 @@
     justify-content: space-between;
   }
 
-  .cart-header h3 {
-    font-size: 16px;
-    font-weight: 800;
-    letter-spacing: -.2px;
-  }
+  .cart-header h3 { font-size: 16px; font-weight: 800; letter-spacing: -.2px; }
 
   .cart-header .cart-sub {
     font-size: 11.5px;
@@ -599,10 +592,25 @@
     height: 54px;
     background: #f7f8fa;
     border-radius: 10px;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 26px;
     flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .cart-item-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .cart-item-icon.img-failed::after {
+    content: attr(data-emoji);
+    font-size: 26px;
+    line-height: 1;
   }
 
   .cart-item-info { flex: 1; min-width: 0; }
@@ -645,14 +653,7 @@
   }
 
   .cart-empty .icon { font-size: 52px; margin-bottom: 12px; }
-
-  .cart-empty h4 {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 5px;
-  }
-
+  .cart-empty h4 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
   .cart-empty p { font-size: 13px; line-height: 1.5; }
 
   .cart-footer {
@@ -737,6 +738,9 @@
     align-items: center;
     gap: 8px;
     white-space: nowrap;
+    max-width: 92vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .toast .tick { color: #4ade80; font-weight: 900; }
@@ -800,11 +804,11 @@
       gap: 10px;
     }
 
-    .card-img { font-size: 42px; }
     .card-name { font-size: 12.5px; min-height: 34px; }
     .price { font-size: 13px; }
     .add-btn { padding: 5px 12px; font-size: 11px; }
     .stepper button { width: 23px; height: 26px; }
+    .card-img.img-failed::after { font-size: 42px; }
   }
 
   @media (max-width: 420px) {
@@ -871,32 +875,7 @@
 
 <!-- ================= CATEGORIES ================= -->
 <div class="section-title">Shop by category</div>
-<div class="cat-strip" id="categories">
-  <button class="cat-tile active" data-cat="All">
-    <span class="cat-emoji">🛍️</span><span class="cat-label">All</span>
-  </button>
-  <button class="cat-tile" data-cat="Educational">
-    <span class="cat-emoji">🔬</span><span class="cat-label">Educational</span>
-  </button>
-  <button class="cat-tile" data-cat="Action Figures">
-    <span class="cat-emoji">🦸</span><span class="cat-label">Action Figures</span>
-  </button>
-  <button class="cat-tile" data-cat="Puzzles">
-    <span class="cat-emoji">🧩</span><span class="cat-label">Puzzles</span>
-  </button>
-  <button class="cat-tile" data-cat="Outdoor">
-    <span class="cat-emoji">🛴</span><span class="cat-label">Outdoor</span>
-  </button>
-  <button class="cat-tile" data-cat="Baby & Toddler">
-    <span class="cat-emoji">🍼</span><span class="cat-label">Baby &amp; Toddler</span>
-  </button>
-  <button class="cat-tile" data-cat="Board Games">
-    <span class="cat-emoji">🎲</span><span class="cat-label">Board Games</span>
-  </button>
-  <button class="cat-tile" data-cat="Plush">
-    <span class="cat-emoji">🧸</span><span class="cat-label">Plush</span>
-  </button>
-</div>
+<div class="cat-strip" id="categories"></div>
 
 <!-- ================= PRODUCT GRID ================= -->
 <div class="section-title">Toys for you</div>
@@ -938,52 +917,75 @@
 
 <script>
   /* =========================================================
-     PRODUCT DATA
+     IMAGE HELPER
+     Builds a real-photo URL from keywords.
+     LoremFlickr serves actual Flickr photos matched to tags.
+     `lock` keeps the same photo for a given product every time.
+     ========================================================= */
+  const img = (tags, lock) =>
+    `https://loremflickr.com/500/500/${tags}?lock=${lock}`;
+
+  /* =========================================================
+     CATEGORIES
+     ========================================================= */
+  const CATEGORIES = [
+    { cat: 'All',            emoji: '🛍️', img: img('toys,colorful', 900) },
+    { cat: 'Educational',    emoji: '🔬', img: img('stem,toy', 901) },
+    { cat: 'Action Figures', emoji: '🦸', img: img('action,figure,toy', 902) },
+    { cat: 'Puzzles',        emoji: '🧩', img: img('jigsaw,puzzle', 903) },
+    { cat: 'Outdoor',        emoji: '🛴', img: img('kids,scooter', 904) },
+    { cat: 'Baby & Toddler', emoji: '🍼', img: img('baby,toy', 905) },
+    { cat: 'Board Games',    emoji: '🎲', img: img('boardgame,dice', 906) },
+    { cat: 'Plush',          emoji: '🧸', img: img('teddy,bear,plush', 907) },
+  ];
+
+  /* =========================================================
+     PRODUCT DATA — each item has a real photo + emoji fallback
      ========================================================= */
   const PRODUCTS = [
     // ---- Educational / STEM ----
-    { id: 1,  name: "STEM Coding Robot for Kids",         cat: "Educational",    emoji: "🤖", unit: "1 kit",     price: 1499, mrp: 2199,  rating: 4.6, reviews: 1240 },
-    { id: 2,  name: "Magnetic Building Tiles (100 pcs)",  cat: "Educational",    emoji: "🧲", unit: "100 pcs",   price: 899,  mrp: 1299,  rating: 4.8, reviews: 3120 },
-    { id: 3,  name: "Solar System Model Kit",             cat: "Educational",    emoji: "🪐", unit: "1 kit",     price: 649,  mrp: 999,   rating: 4.4, reviews: 890  },
-    { id: 4,  name: "Junior Microscope Set",              cat: "Educational",    emoji: "🔬", unit: "1 set",     price: 1199, mrp: 1799,  rating: 4.5, reviews: 560  },
-    { id: 5,  name: "Wooden Math Puzzle Board",           cat: "Educational",    emoji: "🧮", unit: "1 board",   price: 449,  mrp: 699,   rating: 4.3, reviews: 2100 },
+    { id: 1,  name: "STEM Coding Robot for Kids",          cat: "Educational",    emoji: "🤖", unit: "1 kit",    price: 1499, mrp: 2199,  rating: 4.6, reviews: 1240, img: img('robot,toy', 101) },
+    { id: 2,  name: "Magnetic Building Tiles (100 pcs)",   cat: "Educational",    emoji: "🧲", unit: "100 pcs",  price: 899,  mrp: 1299,  rating: 4.8, reviews: 3120, img: img('building,blocks,toy', 102) },
+    { id: 3,  name: "Solar System Model Kit",              cat: "Educational",    emoji: "🪐", unit: "1 kit",    price: 649,  mrp: 999,   rating: 4.4, reviews: 890,  img: img('solarsystem,planets', 103) },
+    { id: 4,  name: "Junior Microscope Set",               cat: "Educational",    emoji: "🔬", unit: "1 set",    price: 1199, mrp: 1799,  rating: 4.5, reviews: 560,  img: img('microscope,science', 104) },
+    { id: 5,  name: "Wooden Math Puzzle Board",            cat: "Educational",    emoji: "🧮", unit: "1 board",  price: 449,  mrp: 699,   rating: 4.3, reviews: 2100, img: img('wooden,puzzle,numbers', 105) },
 
     // ---- Action Figures ----
-    { id: 6,  name: "Superhero Action Figure Set (5 pcs)",cat: "Action Figures", emoji: "🦸", unit: "5 pcs",     price: 799,  mrp: 1199,  rating: 4.7, reviews: 4200 },
-    { id: 7,  name: "Dinosaur Collectible Pack",          cat: "Action Figures", emoji: "🦕", unit: "6 pcs",     price: 599,  mrp: 899,   rating: 4.5, reviews: 1800 },
-    { id: 8,  name: "Robot Warrior Figure",               cat: "Action Figures", emoji: "🤖", unit: "1 pc",      price: 349,  mrp: 599,   rating: 4.2, reviews: 740  },
-    { id: 9,  name: "Anime Hero Figurine (Limited)",      cat: "Action Figures", emoji: "⚔️", unit: "1 pc",      price: 1299, mrp: 1899,  rating: 4.9, reviews: 320  },
-    { id: 10, name: "Space Explorer Action Set",          cat: "Action Figures", emoji: "🚀", unit: "4 pcs",     price: 899,  mrp: 1399,  rating: 4.4, reviews: 610  },
+    { id: 6,  name: "Superhero Action Figure Set (5 pcs)", cat: "Action Figures", emoji: "🦸", unit: "5 pcs",    price: 799,  mrp: 1199,  rating: 4.7, reviews: 4200, img: img('superhero,figure', 106) },
+    { id: 7,  name: "Dinosaur Collectible Pack",           cat: "Action Figures", emoji: "🦕", unit: "6 pcs",    price: 599,  mrp: 899,   rating: 4.5, reviews: 1800, img: img('dinosaur,toy', 107) },
+    { id: 8,  name: "Robot Warrior Figure",                cat: "Action Figures", emoji: "🤖", unit: "1 pc",     price: 349,  mrp: 599,   rating: 4.2, reviews: 740,  img: img('robot,figure', 108) },
+    { id: 9,  name: "Anime Hero Figurine (Limited)",       cat: "Action Figures", emoji: "⚔️", unit: "1 pc",     price: 1299, mrp: 1899,  rating: 4.9, reviews: 320,  img: img('anime,figurine', 109) },
+    { id: 10, name: "Space Explorer Action Set",           cat: "Action Figures", emoji: "🚀", unit: "4 pcs",    price: 899,  mrp: 1399,  rating: 4.4, reviews: 610,  img: img('spaceship,toy', 110) },
 
     // ---- Puzzles ----
-    { id: 11, name: "1000-Piece Landscape Jigsaw",        cat: "Puzzles",        emoji: "🧩", unit: "1000 pcs",  price: 699,  mrp: 999,   rating: 4.8, reviews: 5600 },
-    { id: 12, name: "3D Crystal Puzzle — Dragon",         cat: "Puzzles",        emoji: "🐉", unit: "1 pc",      price: 499,  mrp: 799,   rating: 4.6, reviews: 2300 },
-    { id: 13, name: "Wooden Animal Puzzle (Toddler)",     cat: "Puzzles",        emoji: "🐘", unit: "1 board",   price: 299,  mrp: 449,   rating: 4.5, reviews: 4100 },
-    { id: 14, name: "World Map Floor Puzzle (48 pcs)",    cat: "Puzzles",        emoji: "🗺️", unit: "48 pcs",    price: 549,  mrp: 849,   rating: 4.3, reviews: 1200 },
-    { id: 15, name: "Brain Teaser Metal Puzzle Set",      cat: "Puzzles",        emoji: "🧠", unit: "6 pcs",     price: 349,  mrp: 549,   rating: 4.4, reviews: 950  },
+    { id: 11, name: "1000-Piece Landscape Jigsaw",         cat: "Puzzles",        emoji: "🧩", unit: "1000 pcs", price: 699,  mrp: 999,   rating: 4.8, reviews: 5600, img: img('jigsaw,puzzle', 111) },
+    { id: 12, name: "3D Crystal Puzzle — Dragon",          cat: "Puzzles",        emoji: "🐉", unit: "1 pc",     price: 499,  mrp: 799,   rating: 4.6, reviews: 2300, img: img('crystal,puzzle', 112) },
+    { id: 13, name: "Wooden Animal Puzzle (Toddler)",      cat: "Puzzles",        emoji: "🐘", unit: "1 board",  price: 299,  mrp: 449,   rating: 4.5, reviews: 4100, img: img('wooden,puzzle,animal', 113) },
+    { id: 14, name: "World Map Floor Puzzle (48 pcs)",     cat: "Puzzles",        emoji: "🗺️", unit: "48 pcs",   price: 549,  mrp: 849,   rating: 4.3, reviews: 1200, img: img('world,map,puzzle', 114) },
+    { id: 15, name: "Brain Teaser Metal Puzzle Set",       cat: "Puzzles",        emoji: "🧠", unit: "6 pcs",    price: 349,  mrp: 549,   rating: 4.4, reviews: 950,  img: img('brainteaser,puzzle', 115) },
 
     // ---- Outdoor ----
-    { id: 16, name: "Kids Electric Ride-On Car",          cat: "Outdoor",        emoji: "🚗", unit: "1 pc",      price: 8999, mrp: 12999, rating: 4.7, reviews: 430  },
-    { id: 17, name: "Foldable Kick Scooter",              cat: "Outdoor",        emoji: "🛴", unit: "1 pc",      price: 2499, mrp: 3499,  rating: 4.5, reviews: 2100 },
-    { id: 18, name: "Water Play Sprinkler Set",           cat: "Outdoor",        emoji: "💦", unit: "1 set",     price: 899,  mrp: 1399,  rating: 4.3, reviews: 780  },
-    { id: 19, name: "Junior Basketball Hoop",             cat: "Outdoor",        emoji: "🏀", unit: "1 set",     price: 1699, mrp: 2499,  rating: 4.6, reviews: 560  },
+    { id: 16, name: "Kids Electric Ride-On Car",           cat: "Outdoor",        emoji: "🚗", unit: "1 pc",     price: 8999, mrp: 12999, rating: 4.7, reviews: 430,  img: img('toy,car,kids', 116) },
+    { id: 17, name: "Foldable Kick Scooter",               cat: "Outdoor",        emoji: "🛴", unit: "1 pc",     price: 2499, mrp: 3499,  rating: 4.5, reviews: 2100, img: img('scooter,kids', 117) },
+    { id: 18, name: "Water Play Sprinkler Set",            cat: "Outdoor",        emoji: "💦", unit: "1 set",    price: 899,  mrp: 1399,  rating: 4.3, reviews: 780,  img: img('sprinkler,water,play', 118) },
+    { id: 19, name: "Junior Basketball Hoop",              cat: "Outdoor",        emoji: "🏀", unit: "1 set",    price: 1699, mrp: 2499,  rating: 4.6, reviews: 560,  img: img('basketball,hoop', 119) },
 
     // ---- Baby & Toddler ----
-    { id: 20, name: "Soft Plush Rattle Set (3 pcs)",      cat: "Baby & Toddler", emoji: "🍼", unit: "3 pcs",     price: 499,  mrp: 799,   rating: 4.8, reviews: 3200 },
-    { id: 21, name: "Stacking Rings Toy",                 cat: "Baby & Toddler", emoji: "🌈", unit: "1 pc",      price: 349,  mrp: 549,   rating: 4.5, reviews: 1800 },
-    { id: 22, name: "Activity Cube for Toddlers",         cat: "Baby & Toddler", emoji: "🧸", unit: "1 pc",      price: 1299, mrp: 1899,  rating: 4.7, reviews: 940  },
-    { id: 23, name: "Push & Pull Elephant Toy",           cat: "Baby & Toddler", emoji: "🐘", unit: "1 pc",      price: 599,  mrp: 899,   rating: 4.4, reviews: 1100 },
+    { id: 20, name: "Soft Plush Rattle Set (3 pcs)",       cat: "Baby & Toddler", emoji: "🍼", unit: "3 pcs",    price: 499,  mrp: 799,   rating: 4.8, reviews: 3200, img: img('baby,rattle,toy', 120) },
+    { id: 21, name: "Stacking Rings Toy",                  cat: "Baby & Toddler", emoji: "🌈", unit: "1 pc",     price: 349,  mrp: 549,   rating: 4.5, reviews: 1800, img: img('stacking,rings,toy', 121) },
+    { id: 22, name: "Activity Cube for Toddlers",          cat: "Baby & Toddler", emoji: "🧸", unit: "1 pc",     price: 1299, mrp: 1899,  rating: 4.7, reviews: 940,  img: img('activity,cube,toddler', 122) },
+    { id: 23, name: "Push & Pull Elephant Toy",            cat: "Baby & Toddler", emoji: "🐘", unit: "1 pc",     price: 599,  mrp: 899,   rating: 4.4, reviews: 1100, img: img('elephant,toy,wooden', 123) },
 
     // ---- Board Games ----
-    { id: 24, name: "Family Strategy Board Game",         cat: "Board Games",    emoji: "♟️", unit: "1 game",    price: 899,  mrp: 1399,  rating: 4.6, reviews: 2100 },
-    { id: 25, name: "Kids Ludo & Snakes Set",             cat: "Board Games",    emoji: "🎲", unit: "2 games",   price: 399,  mrp: 649,   rating: 4.3, reviews: 3400 },
-    { id: 26, name: "Cooperative Mystery Game",           cat: "Board Games",    emoji: "🕵️", unit: "1 game",    price: 1199, mrp: 1699,  rating: 4.8, reviews: 780  },
-    { id: 27, name: "Travel Chess Set (Magnetic)",        cat: "Board Games",    emoji: "♚", unit: "1 set",     price: 499,  mrp: 749,   rating: 4.5, reviews: 1600 },
+    { id: 24, name: "Family Strategy Board Game",          cat: "Board Games",    emoji: "♟️", unit: "1 game",   price: 899,  mrp: 1399,  rating: 4.6, reviews: 2100, img: img('boardgame,family', 124) },
+    { id: 25, name: "Kids Ludo & Snakes Set",              cat: "Board Games",    emoji: "🎲", unit: "2 games",  price: 399,  mrp: 649,   rating: 4.3, reviews: 3400, img: img('dice,boardgame', 125) },
+    { id: 26, name: "Cooperative Mystery Game",            cat: "Board Games",    emoji: "🕵️", unit: "1 game",   price: 1199, mrp: 1699,  rating: 4.8, reviews: 780,  img: img('mystery,boardgame', 126) },
+    { id: 27, name: "Travel Chess Set (Magnetic)",         cat: "Board Games",    emoji: "♚", unit: "1 set",    price: 499,  mrp: 749,   rating: 4.5, reviews: 1600, img: img('chess,set', 127) },
 
     // ---- Plush ----
-    { id: 28, name: "Giant Teddy Bear (3 ft)",            cat: "Plush",          emoji: "🧸", unit: "1 pc",      price: 1499, mrp: 2299,  rating: 4.9, reviews: 5600 },
-    { id: 29, name: "Unicorn Plush Pillow",               cat: "Plush",          emoji: "🦄", unit: "1 pc",      price: 799,  mrp: 1199,  rating: 4.6, reviews: 2300 },
-    { id: 30, name: "Baby Bunny Soft Toy",                cat: "Plush",          emoji: "🐰", unit: "1 pc",      price: 399,  mrp: 649,   rating: 4.7, reviews: 4100 },
+    { id: 28, name: "Giant Teddy Bear (3 ft)",             cat: "Plush",          emoji: "🧸", unit: "1 pc",     price: 1499, mrp: 2299,  rating: 4.9, reviews: 5600, img: img('teddy,bear,plush', 128) },
+    { id: 29, name: "Unicorn Plush Pillow",                cat: "Plush",          emoji: "🦄", unit: "1 pc",     price: 799,  mrp: 1199,  rating: 4.6, reviews: 2300, img: img('unicorn,plush', 129) },
+    { id: 30, name: "Baby Bunny Soft Toy",                 cat: "Plush",          emoji: "🐰", unit: "1 pc",     price: 399,  mrp: 649,   rating: 4.7, reviews: 4100, img: img('bunny,plush,toy', 130) },
   ];
 
   const FREE_DELIVERY_ABOVE = 499;
@@ -999,26 +1001,48 @@
   /* =========================================================
      DOM REFS
      ========================================================= */
-  const grid          = document.getElementById('productGrid');
-  const searchInput   = document.getElementById('searchInput');
-  const categoriesEl  = document.getElementById('categories');
-  const cartToggle    = document.getElementById('cartToggle');
-  const cartPanel     = document.getElementById('cartPanel');
-  const cartOverlay   = document.getElementById('cartOverlay');
-  const cartClose     = document.getElementById('cartClose');
-  const cartItemsEl   = document.getElementById('cartItems');
-  const cartCountEl   = document.getElementById('cartCount');
-  const cartTotalBtn  = document.getElementById('cartTotalBtn');
-  const cartFooter    = document.getElementById('cartFooter');
-  const billSubtotal  = document.getElementById('billSubtotal');
-  const billDelivery  = document.getElementById('billDelivery');
-  const cartTotalEl   = document.getElementById('cartTotal');
-  const checkoutBtn   = document.getElementById('checkoutBtn');
-  const toast         = document.getElementById('toast');
-  const toastMsg      = document.getElementById('toastMsg');
+  const grid         = document.getElementById('productGrid');
+  const searchInput  = document.getElementById('searchInput');
+  const categoriesEl = document.getElementById('categories');
+  const cartToggle   = document.getElementById('cartToggle');
+  const cartPanel    = document.getElementById('cartPanel');
+  const cartOverlay  = document.getElementById('cartOverlay');
+  const cartClose    = document.getElementById('cartClose');
+  const cartItemsEl  = document.getElementById('cartItems');
+  const cartCountEl  = document.getElementById('cartCount');
+  const cartTotalBtn = document.getElementById('cartTotalBtn');
+  const cartFooter   = document.getElementById('cartFooter');
+  const billSubtotal = document.getElementById('billSubtotal');
+  const billDelivery = document.getElementById('billDelivery');
+  const cartTotalEl  = document.getElementById('cartTotal');
+  const checkoutBtn  = document.getElementById('checkoutBtn');
+  const toast        = document.getElementById('toast');
+  const toastMsg     = document.getElementById('toastMsg');
 
   const getProduct = (id) => PRODUCTS.find(p => p.id === Number(id));
   const inr = (n) => '₹' + n.toLocaleString('en-IN');
+
+  /* =========================================================
+     PHOTO MARKUP HELPERS
+     onerror adds .img-failed → CSS shows the emoji instead
+     ========================================================= */
+  const photoHTML = (p) =>
+    `<img src="${p.img}" alt="${p.name}" loading="lazy"
+          onerror="this.parentElement.classList.add('img-failed'); this.remove();">`;
+
+  /* =========================================================
+     RENDER: CATEGORY STRIP
+     ========================================================= */
+  function renderCategories() {
+    categoriesEl.innerHTML = CATEGORIES.map(c => `
+      <button class="cat-tile ${c.cat === activeCategory ? 'active' : ''}" data-cat="${c.cat}">
+        <span class="cat-emoji">
+          <img src="${c.img}" alt="${c.cat}" loading="lazy"
+               onerror="this.style.display='none'; this.parentElement.textContent='${c.emoji}';">
+        </span>
+        <span class="cat-label">${c.cat === 'Baby & Toddler' ? 'Baby &amp; Toddler' : c.cat}</span>
+      </button>`).join('');
+  }
 
   /* =========================================================
      RENDER: PRODUCT GRID
@@ -1049,9 +1073,9 @@
     const off = Math.round(((p.mrp - p.price) / p.mrp) * 100);
     return `
       <article class="card" data-id="${p.id}">
-        <div class="card-img">
+        <div class="card-img" data-emoji="${p.emoji}">
           <span class="discount-tag">${off}% OFF</span>
-          <span>${p.emoji}</span>
+          ${photoHTML(p)}
         </div>
         <div class="card-rating">
           <span class="star">★</span>${p.rating}
@@ -1150,7 +1174,9 @@
       const p = getProduct(id);
       return `
         <div class="cart-item">
-          <div class="cart-item-icon">${p.emoji}</div>
+          <div class="cart-item-icon" data-emoji="${p.emoji}">
+            ${photoHTML(p)}
+          </div>
           <div class="cart-item-info">
             <div class="cart-item-name">${p.name}</div>
             <div class="cart-item-unit">${p.unit}</div>
@@ -1251,6 +1277,7 @@
   /* =========================================================
      INIT
      ========================================================= */
+  renderCategories();
   renderProducts();
   updateCartUI();
 </script>
