@@ -15,7 +15,6 @@
   }
 
   :root {
-    /* Blinkit palette */
     --yellow: #f8cb46;
     --yellow-soft: #fef3c7;
     --green: #0c831f;
@@ -61,12 +60,7 @@
     gap: 18px;
   }
 
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex-shrink: 0;
-  }
+  .brand { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
 
   .logo {
     font-size: 24px;
@@ -85,20 +79,9 @@
     line-height: 1.25;
   }
 
-  .eta-time {
-    display: block;
-    font-size: 13px;
-    font-weight: 800;
-    color: var(--text);
-  }
+  .eta-time { display: block; font-size: 13px; font-weight: 800; color: var(--text); }
+  .eta-label { display: block; font-size: 11px; color: #5c5c5c; }
 
-  .eta-label {
-    display: block;
-    font-size: 11px;
-    color: #5c5c5c;
-  }
-
-  /* --- Search --- */
   .search-bar {
     flex: 1;
     max-width: 620px;
@@ -133,13 +116,7 @@
 
   .search-bar input::placeholder { color: var(--text-faint); }
 
-  /* --- Header actions --- */
-  .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-left: auto;
-  }
+  .header-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
 
   .login-btn {
     background: transparent;
@@ -173,23 +150,12 @@
   .cart-btn:hover { background: var(--green-dark); }
   .cart-btn:active { transform: scale(.97); }
 
-  .cart-btn-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    line-height: 1.2;
-  }
-
+  .cart-btn-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2; }
   .cart-btn-count { font-size: 11px; font-weight: 600; opacity: .92; }
   .cart-btn-total { font-size: 14px; font-weight: 800; }
 
   /* ================= PROMO BANNER ================= */
-  .promo {
-    max-width: 1280px;
-    margin: 16px auto 0;
-    padding: 0 24px;
-    width: 100%;
-  }
+  .promo { max-width: 1280px; margin: 16px auto 0; padding: 0 24px; width: 100%; }
 
   .promo-inner {
     background: linear-gradient(115deg, #0c831f 0%, #16a34a 55%, #37b24d 100%);
@@ -285,12 +251,7 @@
     overflow: hidden;
   }
 
-  .cat-emoji img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+  .cat-emoji img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   .cat-tile:hover .cat-emoji { border-color: #bfe3c6; }
 
@@ -337,7 +298,6 @@
     border-color: #dcdcdc;
   }
 
-  /* ---- Product image tile ---- */
   .card-img {
     position: relative;
     width: 100%;
@@ -361,7 +321,6 @@
 
   .card:hover .card-img img { transform: scale(1.06); }
 
-  /* emoji fallback if the photo fails to load */
   .card-img.img-failed::after {
     content: attr(data-emoji);
     font-size: 52px;
@@ -412,11 +371,7 @@
     min-height: 35px;
   }
 
-  .card-unit {
-    font-size: 11px;
-    color: var(--text-faint);
-    margin-bottom: 10px;
-  }
+  .card-unit { font-size: 11px; color: var(--text-faint); margin-bottom: 10px; }
 
   .price-row {
     margin-top: auto;
@@ -426,12 +381,7 @@
     gap: 6px;
   }
 
-  .price {
-    font-size: 14px;
-    font-weight: 800;
-    color: var(--text);
-    white-space: nowrap;
-  }
+  .price { font-size: 14px; font-weight: 800; color: var(--text); white-space: nowrap; }
 
   .price .mrp {
     font-size: 11px;
@@ -441,7 +391,6 @@
     margin-left: 4px;
   }
 
-  /* --- ADD button (Blinkit outlined green) --- */
   .add-btn {
     background: #fff;
     border: 1.5px solid var(--green);
@@ -460,7 +409,6 @@
   .add-btn:hover { background: var(--green-light); }
   .add-btn:active { transform: scale(.95); }
 
-  /* --- Quantity stepper --- */
   .stepper {
     display: flex;
     align-items: center;
@@ -572,11 +520,7 @@
 
   .cart-close:hover { background: #e8e8e8; }
 
-  .cart-items {
-    flex: 1;
-    overflow-y: auto;
-    padding: 14px 20px;
-  }
+  .cart-items { flex: 1; overflow-y: auto; padding: 14px 20px; }
 
   .cart-item {
     display: flex;
@@ -600,12 +544,7 @@
     overflow: hidden;
   }
 
-  .cart-item-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+  .cart-item-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   .cart-item-icon.img-failed::after {
     content: attr(data-emoji);
@@ -626,11 +565,7 @@
     overflow: hidden;
   }
 
-  .cart-item-unit {
-    font-size: 11px;
-    color: var(--text-faint);
-    margin-top: 2px;
-  }
+  .cart-item-unit { font-size: 11px; color: var(--text-faint); margin-top: 2px; }
 
   .cart-item-bottom {
     display: flex;
@@ -640,18 +575,9 @@
     margin-top: 8px;
   }
 
-  .cart-item-price {
-    font-size: 13.5px;
-    font-weight: 800;
-    color: var(--text);
-  }
+  .cart-item-price { font-size: 13.5px; font-weight: 800; color: var(--text); }
 
-  .cart-empty {
-    text-align: center;
-    padding: 64px 20px;
-    color: var(--text-muted);
-  }
-
+  .cart-empty { text-align: center; padding: 64px 20px; color: var(--text-muted); }
   .cart-empty .icon { font-size: 52px; margin-bottom: 12px; }
   .cart-empty h4 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
   .cart-empty p { font-size: 13px; line-height: 1.5; }
@@ -716,6 +642,11 @@
 
   .checkout-btn:hover { background: var(--green-dark); }
   .checkout-btn:active { transform: scale(.985); }
+  .checkout-btn:disabled {
+    background: #b8b8b8;
+    cursor: not-allowed;
+    transform: none;
+  }
 
   /* ================= TOAST ================= */
   .toast {
@@ -745,10 +676,7 @@
 
   .toast .tick { color: #4ade80; font-weight: 900; }
 
-  .toast.show {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
   /* ================= FOOTER ================= */
   footer {
@@ -765,26 +693,12 @@
   footer p + p { margin-top: 6px; }
 
   /* ================= RESPONSIVE ================= */
-  @media (max-width: 900px) {
-    .eta { display: none; }
-  }
+  @media (max-width: 900px) { .eta { display: none; } }
 
   @media (max-width: 768px) {
-    .header-inner {
-      flex-wrap: wrap;
-      padding: 10px 16px;
-      gap: 10px;
-    }
-
+    .header-inner { flex-wrap: wrap; padding: 10px 16px; gap: 10px; }
     .logo { font-size: 21px; }
-
-    .search-bar {
-      order: 3;
-      flex-basis: 100%;
-      max-width: 100%;
-      height: 42px;
-    }
-
+    .search-bar { order: 3; flex-basis: 100%; max-width: 100%; height: 42px; }
     .login-btn { display: none; }
 
     .promo, .section-title, .cat-strip, .product-grid {
@@ -799,10 +713,7 @@
     .cat-emoji { width: 62px; height: 62px; font-size: 26px; border-radius: 14px; }
     .cat-tile { width: 74px; }
 
-    .product-grid {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 10px;
-    }
+    .product-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
 
     .card-name { font-size: 12.5px; min-height: 34px; }
     .price { font-size: 13px; }
@@ -812,11 +723,7 @@
   }
 
   @media (max-width: 420px) {
-    .product-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 9px;
-    }
-
+    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 9px; }
     .cart-btn-text { display: none; }
     .cart-btn { padding: 10px 12px; border-radius: 9px; }
   }
@@ -917,10 +824,33 @@
 
 <script>
   /* =========================================================
+     ⚙️  SHIPROCKET CONFIG — EDIT THIS PART ONLY  ⚙️
+     =========================================================
+
+     STEP 1: Go to your Shiprocket dashboard.
+     STEP 2: Find your "Checkout" or "Fastrr" store slug.
+     STEP 3: Paste that slug below (no spaces, no quotes left behind).
+     STEP 4: Create each product in Shiprocket and make sure the SKU
+             matches the `sku` field in the PRODUCTS list below.
+
+     ⚠️  The exact query-string format can vary. If your dashboard
+     shows a different format (e.g. `?product_id=` or `?variant_id=`),
+     simply edit the `buildShiprocketUrl` function at the bottom.
+  */
+  const SHIPROCKET_CONFIG = {
+    storeSlug: 'YOUR-STORE-SLUG',         // ← REPLACE THIS
+    checkoutBase: 'https://checkout.shiprocket.in',
+
+    // How we pass items in the URL. Options:
+    //   'comma'  →  ?products=SKU1:QTY1,SKU2:QTY2   (single param)
+    //   'multi'  →  ?sku=SKU1&qty=1&sku=SKU2&qty=2  (repeated params)
+    // Check your Shiprocket dashboard for the exact format they accept.
+    urlFormat: 'comma',
+    itemsParam: 'products',
+  };
+
+  /* =========================================================
      IMAGE HELPER
-     Builds a real-photo URL from keywords.
-     LoremFlickr serves actual Flickr photos matched to tags.
-     `lock` keeps the same photo for a given product every time.
      ========================================================= */
   const img = (tags, lock) =>
     `https://loremflickr.com/500/500/${tags}?lock=${lock}`;
@@ -940,52 +870,53 @@
   ];
 
   /* =========================================================
-     PRODUCT DATA — each item has a real photo + emoji fallback
+     PRODUCT DATA
+     `sku` MUST match the SKU you create inside Shiprocket.
      ========================================================= */
   const PRODUCTS = [
     // ---- Educational / STEM ----
-    { id: 1,  name: "STEM Coding Robot for Kids",          cat: "Educational",    emoji: "🤖", unit: "1 kit",    price: 1499, mrp: 2199,  rating: 4.6, reviews: 1240, img: img('robot,toy', 101) },
-    { id: 2,  name: "Magnetic Building Tiles (100 pcs)",   cat: "Educational",    emoji: "🧲", unit: "100 pcs",  price: 899,  mrp: 1299,  rating: 4.8, reviews: 3120, img: img('building,blocks,toy', 102) },
-    { id: 3,  name: "Solar System Model Kit",              cat: "Educational",    emoji: "🪐", unit: "1 kit",    price: 649,  mrp: 999,   rating: 4.4, reviews: 890,  img: img('solarsystem,planets', 103) },
-    { id: 4,  name: "Junior Microscope Set",               cat: "Educational",    emoji: "🔬", unit: "1 set",    price: 1199, mrp: 1799,  rating: 4.5, reviews: 560,  img: img('microscope,science', 104) },
-    { id: 5,  name: "Wooden Math Puzzle Board",            cat: "Educational",    emoji: "🧮", unit: "1 board",  price: 449,  mrp: 699,   rating: 4.3, reviews: 2100, img: img('wooden,puzzle,numbers', 105) },
+    { id: 1,  sku: "TV-001", name: "STEM Coding Robot for Kids",          cat: "Educational",    emoji: "🤖", unit: "1 kit",    price: 1499, mrp: 2199,  rating: 4.6, reviews: 1240, img: img('robot,toy', 101) },
+    { id: 2,  sku: "TV-002", name: "Magnetic Building Tiles (100 pcs)",   cat: "Educational",    emoji: "🧲", unit: "100 pcs",  price: 899,  mrp: 1299,  rating: 4.8, reviews: 3120, img: img('building,blocks,toy', 102) },
+    { id: 3,  sku: "TV-003", name: "Solar System Model Kit",              cat: "Educational",    emoji: "🪐", unit: "1 kit",    price: 649,  mrp: 999,   rating: 4.4, reviews: 890,  img: img('solarsystem,planets', 103) },
+    { id: 4,  sku: "TV-004", name: "Junior Microscope Set",               cat: "Educational",    emoji: "🔬", unit: "1 set",    price: 1199, mrp: 1799,  rating: 4.5, reviews: 560,  img: img('microscope,science', 104) },
+    { id: 5,  sku: "TV-005", name: "Wooden Math Puzzle Board",            cat: "Educational",    emoji: "🧮", unit: "1 board",  price: 449,  mrp: 699,   rating: 4.3, reviews: 2100, img: img('wooden,puzzle,numbers', 105) },
 
     // ---- Action Figures ----
-    { id: 6,  name: "Superhero Action Figure Set (5 pcs)", cat: "Action Figures", emoji: "🦸", unit: "5 pcs",    price: 799,  mrp: 1199,  rating: 4.7, reviews: 4200, img: img('superhero,figure', 106) },
-    { id: 7,  name: "Dinosaur Collectible Pack",           cat: "Action Figures", emoji: "🦕", unit: "6 pcs",    price: 599,  mrp: 899,   rating: 4.5, reviews: 1800, img: img('dinosaur,toy', 107) },
-    { id: 8,  name: "Robot Warrior Figure",                cat: "Action Figures", emoji: "🤖", unit: "1 pc",     price: 349,  mrp: 599,   rating: 4.2, reviews: 740,  img: img('robot,figure', 108) },
-    { id: 9,  name: "Anime Hero Figurine (Limited)",       cat: "Action Figures", emoji: "⚔️", unit: "1 pc",     price: 1299, mrp: 1899,  rating: 4.9, reviews: 320,  img: img('anime,figurine', 109) },
-    { id: 10, name: "Space Explorer Action Set",           cat: "Action Figures", emoji: "🚀", unit: "4 pcs",    price: 899,  mrp: 1399,  rating: 4.4, reviews: 610,  img: img('spaceship,toy', 110) },
+    { id: 6,  sku: "TV-006", name: "Superhero Action Figure Set (5 pcs)", cat: "Action Figures", emoji: "🦸", unit: "5 pcs",    price: 799,  mrp: 1199,  rating: 4.7, reviews: 4200, img: img('superhero,figure', 106) },
+    { id: 7,  sku: "TV-007", name: "Dinosaur Collectible Pack",           cat: "Action Figures", emoji: "🦕", unit: "6 pcs",    price: 599,  mrp: 899,   rating: 4.5, reviews: 1800, img: img('dinosaur,toy', 107) },
+    { id: 8,  sku: "TV-008", name: "Robot Warrior Figure",                cat: "Action Figures", emoji: "🤖", unit: "1 pc",     price: 349,  mrp: 599,   rating: 4.2, reviews: 740,  img: img('robot,figure', 108) },
+    { id: 9,  sku: "TV-009", name: "Anime Hero Figurine (Limited)",       cat: "Action Figures", emoji: "⚔️", unit: "1 pc",     price: 1299, mrp: 1899,  rating: 4.9, reviews: 320,  img: img('anime,figurine', 109) },
+    { id: 10, sku: "TV-010", name: "Space Explorer Action Set",           cat: "Action Figures", emoji: "🚀", unit: "4 pcs",    price: 899,  mrp: 1399,  rating: 4.4, reviews: 610,  img: img('spaceship,toy', 110) },
 
     // ---- Puzzles ----
-    { id: 11, name: "1000-Piece Landscape Jigsaw",         cat: "Puzzles",        emoji: "🧩", unit: "1000 pcs", price: 699,  mrp: 999,   rating: 4.8, reviews: 5600, img: img('jigsaw,puzzle', 111) },
-    { id: 12, name: "3D Crystal Puzzle — Dragon",          cat: "Puzzles",        emoji: "🐉", unit: "1 pc",     price: 499,  mrp: 799,   rating: 4.6, reviews: 2300, img: img('crystal,puzzle', 112) },
-    { id: 13, name: "Wooden Animal Puzzle (Toddler)",      cat: "Puzzles",        emoji: "🐘", unit: "1 board",  price: 299,  mrp: 449,   rating: 4.5, reviews: 4100, img: img('wooden,puzzle,animal', 113) },
-    { id: 14, name: "World Map Floor Puzzle (48 pcs)",     cat: "Puzzles",        emoji: "🗺️", unit: "48 pcs",   price: 549,  mrp: 849,   rating: 4.3, reviews: 1200, img: img('world,map,puzzle', 114) },
-    { id: 15, name: "Brain Teaser Metal Puzzle Set",       cat: "Puzzles",        emoji: "🧠", unit: "6 pcs",    price: 349,  mrp: 549,   rating: 4.4, reviews: 950,  img: img('brainteaser,puzzle', 115) },
+    { id: 11, sku: "TV-011", name: "1000-Piece Landscape Jigsaw",         cat: "Puzzles",        emoji: "🧩", unit: "1000 pcs", price: 699,  mrp: 999,   rating: 4.8, reviews: 5600, img: img('jigsaw,puzzle', 111) },
+    { id: 12, sku: "TV-012", name: "3D Crystal Puzzle — Dragon",          cat: "Puzzles",        emoji: "🐉", unit: "1 pc",     price: 499,  mrp: 799,   rating: 4.6, reviews: 2300, img: img('crystal,puzzle', 112) },
+    { id: 13, sku: "TV-013", name: "Wooden Animal Puzzle (Toddler)",      cat: "Puzzles",        emoji: "🐘", unit: "1 board",  price: 299,  mrp: 449,   rating: 4.5, reviews: 4100, img: img('wooden,puzzle,animal', 113) },
+    { id: 14, sku: "TV-014", name: "World Map Floor Puzzle (48 pcs)",     cat: "Puzzles",        emoji: "🗺️", unit: "48 pcs",   price: 549,  mrp: 849,   rating: 4.3, reviews: 1200, img: img('world,map,puzzle', 114) },
+    { id: 15, sku: "TV-015", name: "Brain Teaser Metal Puzzle Set",       cat: "Puzzles",        emoji: "🧠", unit: "6 pcs",    price: 349,  mrp: 549,   rating: 4.4, reviews: 950,  img: img('brainteaser,puzzle', 115) },
 
     // ---- Outdoor ----
-    { id: 16, name: "Kids Electric Ride-On Car",           cat: "Outdoor",        emoji: "🚗", unit: "1 pc",     price: 8999, mrp: 12999, rating: 4.7, reviews: 430,  img: img('toy,car,kids', 116) },
-    { id: 17, name: "Foldable Kick Scooter",               cat: "Outdoor",        emoji: "🛴", unit: "1 pc",     price: 2499, mrp: 3499,  rating: 4.5, reviews: 2100, img: img('scooter,kids', 117) },
-    { id: 18, name: "Water Play Sprinkler Set",            cat: "Outdoor",        emoji: "💦", unit: "1 set",    price: 899,  mrp: 1399,  rating: 4.3, reviews: 780,  img: img('sprinkler,water,play', 118) },
-    { id: 19, name: "Junior Basketball Hoop",              cat: "Outdoor",        emoji: "🏀", unit: "1 set",    price: 1699, mrp: 2499,  rating: 4.6, reviews: 560,  img: img('basketball,hoop', 119) },
+    { id: 16, sku: "TV-016", name: "Kids Electric Ride-On Car",           cat: "Outdoor",        emoji: "🚗", unit: "1 pc",     price: 8999, mrp: 12999, rating: 4.7, reviews: 430,  img: img('toy,car,kids', 116) },
+    { id: 17, sku: "TV-017", name: "Foldable Kick Scooter",               cat: "Outdoor",        emoji: "🛴", unit: "1 pc",     price: 2499, mrp: 3499,  rating: 4.5, reviews: 2100, img: img('scooter,kids', 117) },
+    { id: 18, sku: "TV-018", name: "Water Play Sprinkler Set",            cat: "Outdoor",        emoji: "💦", unit: "1 set",    price: 899,  mrp: 1399,  rating: 4.3, reviews: 780,  img: img('sprinkler,water,play', 118) },
+    { id: 19, sku: "TV-019", name: "Junior Basketball Hoop",              cat: "Outdoor",        emoji: "🏀", unit: "1 set",    price: 1699, mrp: 2499,  rating: 4.6, reviews: 560,  img: img('basketball,hoop', 119) },
 
     // ---- Baby & Toddler ----
-    { id: 20, name: "Soft Plush Rattle Set (3 pcs)",       cat: "Baby & Toddler", emoji: "🍼", unit: "3 pcs",    price: 499,  mrp: 799,   rating: 4.8, reviews: 3200, img: img('baby,rattle,toy', 120) },
-    { id: 21, name: "Stacking Rings Toy",                  cat: "Baby & Toddler", emoji: "🌈", unit: "1 pc",     price: 349,  mrp: 549,   rating: 4.5, reviews: 1800, img: img('stacking,rings,toy', 121) },
-    { id: 22, name: "Activity Cube for Toddlers",          cat: "Baby & Toddler", emoji: "🧸", unit: "1 pc",     price: 1299, mrp: 1899,  rating: 4.7, reviews: 940,  img: img('activity,cube,toddler', 122) },
-    { id: 23, name: "Push & Pull Elephant Toy",            cat: "Baby & Toddler", emoji: "🐘", unit: "1 pc",     price: 599,  mrp: 899,   rating: 4.4, reviews: 1100, img: img('elephant,toy,wooden', 123) },
+    { id: 20, sku: "TV-020", name: "Soft Plush Rattle Set (3 pcs)",       cat: "Baby & Toddler", emoji: "🍼", unit: "3 pcs",    price: 499,  mrp: 799,   rating: 4.8, reviews: 3200, img: img('baby,rattle,toy', 120) },
+    { id: 21, sku: "TV-021", name: "Stacking Rings Toy",                  cat: "Baby & Toddler", emoji: "🌈", unit: "1 pc",     price: 349,  mrp: 549,   rating: 4.5, reviews: 1800, img: img('stacking,rings,toy', 121) },
+    { id: 22, sku: "TV-022", name: "Activity Cube for Toddlers",          cat: "Baby & Toddler", emoji: "🧸", unit: "1 pc",     price: 1299, mrp: 1899,  rating: 4.7, reviews: 940,  img: img('activity,cube,toddler', 122) },
+    { id: 23, sku: "TV-023", name: "Push & Pull Elephant Toy",            cat: "Baby & Toddler", emoji: "🐘", unit: "1 pc",     price: 599,  mrp: 899,   rating: 4.4, reviews: 1100, img: img('elephant,toy,wooden', 123) },
 
     // ---- Board Games ----
-    { id: 24, name: "Family Strategy Board Game",          cat: "Board Games",    emoji: "♟️", unit: "1 game",   price: 899,  mrp: 1399,  rating: 4.6, reviews: 2100, img: img('boardgame,family', 124) },
-    { id: 25, name: "Kids Ludo & Snakes Set",              cat: "Board Games",    emoji: "🎲", unit: "2 games",  price: 399,  mrp: 649,   rating: 4.3, reviews: 3400, img: img('dice,boardgame', 125) },
-    { id: 26, name: "Cooperative Mystery Game",            cat: "Board Games",    emoji: "🕵️", unit: "1 game",   price: 1199, mrp: 1699,  rating: 4.8, reviews: 780,  img: img('mystery,boardgame', 126) },
-    { id: 27, name: "Travel Chess Set (Magnetic)",         cat: "Board Games",    emoji: "♚", unit: "1 set",    price: 499,  mrp: 749,   rating: 4.5, reviews: 1600, img: img('chess,set', 127) },
+    { id: 24, sku: "TV-024", name: "Family Strategy Board Game",          cat: "Board Games",    emoji: "♟️", unit: "1 game",   price: 899,  mrp: 1399,  rating: 4.6, reviews: 2100, img: img('boardgame,family', 124) },
+    { id: 25, sku: "TV-025", name: "Kids Ludo & Snakes Set",              cat: "Board Games",    emoji: "🎲", unit: "2 games",  price: 399,  mrp: 649,   rating: 4.3, reviews: 3400, img: img('dice,boardgame', 125) },
+    { id: 26, sku: "TV-026", name: "Cooperative Mystery Game",            cat: "Board Games",    emoji: "🕵️", unit: "1 game",   price: 1199, mrp: 1699,  rating: 4.8, reviews: 780,  img: img('mystery,boardgame', 126) },
+    { id: 27, sku: "TV-027", name: "Travel Chess Set (Magnetic)",         cat: "Board Games",    emoji: "♚", unit: "1 set",    price: 499,  mrp: 749,   rating: 4.5, reviews: 1600, img: img('chess,set', 127) },
 
     // ---- Plush ----
-    { id: 28, name: "Giant Teddy Bear (3 ft)",             cat: "Plush",          emoji: "🧸", unit: "1 pc",     price: 1499, mrp: 2299,  rating: 4.9, reviews: 5600, img: img('teddy,bear,plush', 128) },
-    { id: 29, name: "Unicorn Plush Pillow",                cat: "Plush",          emoji: "🦄", unit: "1 pc",     price: 799,  mrp: 1199,  rating: 4.6, reviews: 2300, img: img('unicorn,plush', 129) },
-    { id: 30, name: "Baby Bunny Soft Toy",                 cat: "Plush",          emoji: "🐰", unit: "1 pc",     price: 399,  mrp: 649,   rating: 4.7, reviews: 4100, img: img('bunny,plush,toy', 130) },
+    { id: 28, sku: "TV-028", name: "Giant Teddy Bear (3 ft)",             cat: "Plush",          emoji: "🧸", unit: "1 pc",     price: 1499, mrp: 2299,  rating: 4.9, reviews: 5600, img: img('teddy,bear,plush', 128) },
+    { id: 29, sku: "TV-029", name: "Unicorn Plush Pillow",                cat: "Plush",          emoji: "🦄", unit: "1 pc",     price: 799,  mrp: 1199,  rating: 4.6, reviews: 2300, img: img('unicorn,plush', 129) },
+    { id: 30, sku: "TV-030", name: "Baby Bunny Soft Toy",                 cat: "Plush",          emoji: "🐰", unit: "1 pc",     price: 399,  mrp: 649,   rating: 4.7, reviews: 4100, img: img('bunny,plush,toy', 130) },
   ];
 
   const FREE_DELIVERY_ABOVE = 499;
@@ -1024,7 +955,6 @@
 
   /* =========================================================
      PHOTO MARKUP HELPERS
-     onerror adds .img-failed → CSS shows the emoji instead
      ========================================================= */
   const photoHTML = (p) =>
     `<img src="${p.img}" alt="${p.name}" loading="lazy"
@@ -1103,7 +1033,6 @@
       </div>`;
   }
 
-  /* Sync every product card's button with the cart state */
   function refreshActionButtons() {
     document.querySelectorAll('.action-wrap').forEach(el => {
       el.innerHTML = actionHTML(el.dataset.action);
@@ -1111,7 +1040,7 @@
   }
 
   /* =========================================================
-     GRID INTERACTIONS (delegation)
+     GRID INTERACTIONS
      ========================================================= */
   grid.addEventListener('click', (e) => {
     const add = e.target.closest('[data-add]');
@@ -1198,7 +1127,6 @@
     cartTotalEl.textContent = inr(grand);
   }
 
-  /* Cart panel qty controls (delegation) */
   cartItemsEl.addEventListener('click', (e) => {
     const inc = e.target.closest('[data-inc]');
     const dec = e.target.closest('[data-dec]');
@@ -1252,15 +1180,59 @@
   });
 
   /* =========================================================
-     CHECKOUT
+     🚀 SHIPROCKET CHECKOUT
+     Builds the redirect URL from the cart and sends the
+     customer to Shiprocket's hosted checkout page.
      ========================================================= */
+  function buildShiprocketUrl() {
+    const entries = Object.entries(cart);
+    if (entries.length === 0) return null;
+
+    const { storeSlug, checkoutBase, urlFormat, itemsParam } = SHIPROCKET_CONFIG;
+
+    let query = '';
+
+    if (urlFormat === 'comma') {
+      // ?products=SKU1:QTY1,SKU2:QTY2
+      const items = entries
+        .map(([id, qty]) => `${getProduct(id).sku}:${qty}`)
+        .join(',');
+      query = `${itemsParam}=${encodeURIComponent(items)}`;
+    } else {
+      // ?sku=SKU1&qty=1&sku=SKU2&qty=2
+      const parts = [];
+      entries.forEach(([id, qty]) => {
+        parts.push(`${itemsParam}=${encodeURIComponent(getProduct(id).sku)}`);
+        parts.push(`qty=${qty}`);
+      });
+      query = parts.join('&');
+    }
+
+    return `${checkoutBase}/${storeSlug}/checkout?${query}`;
+  }
+
   checkoutBtn.addEventListener('click', () => {
-    const count = Object.values(cart).reduce((s, q) => s + q, 0);
-    if (count === 0) return;
-    cart = {};
-    afterCartChange();
-    closeCart();
-    showToast('Order placed! Arriving in 8 minutes 🎉');
+    const totalItems = Object.values(cart).reduce((s, q) => s + q, 0);
+    if (totalItems === 0) return;
+
+    // Safety check: warn the developer if they forgot to set the slug
+    if (SHIPROCKET_CONFIG.storeSlug === 'YOUR-STORE-SLUG') {
+      showToast('⚠️ Set your Shiprocket store slug in the code first');
+      console.warn(
+        '[ToyVerse] Please edit SHIPROCKET_CONFIG.storeSlug in the script with your real Shiprocket store slug.'
+      );
+      return;
+    }
+
+    const url = buildShiprocketUrl();
+    if (!url) return;
+
+    showToast('Redirecting to secure checkout… 🚀');
+
+    // Redirect to Shiprocket's hosted checkout
+    setTimeout(() => {
+      window.location.href = url;
+    }, 400);
   });
 
   /* =========================================================
@@ -1271,7 +1243,7 @@
     toastMsg.textContent = msg;
     toast.classList.add('show');
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('show'), 2000);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
   }
 
   /* =========================================================
